@@ -3,50 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>My Projects | I’Lek Powell</title>
+
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
     <header>
       <h1>My Projects</h1>
       <p>Some of the work I have completed in college.</p>
     </header>
 
     <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="projects.html" aria-current="page">My Projects</a>
-      <a href="about.html">About/Contact</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" aria-current="page">My Projects</a></li>
+        <li><a href="about.html">About/Contact</a></li>
+      </ul>
     </nav>
 
-    <main>
-      <section>
+    <main id="main">
+      <section id="school-projects">
         <h2>My School Projects</h2>
 
-        <article class="content-box">
-          <h3>Personal Website</h3>
-          <p>
-            I learned how to build webpages using HTML and organize information.
-          </p>
-        </article>
+        <div class="project-container">
+          <article class="project-card">
+            <h3>Personal Website</h3>
+            <p>
+              I learned how to build webpages using HTML and organize
+              information.
+            </p>
+          </article>
 
-        <article class="content-box">
-          <h3>Website Styling</h3>
-          <p>
-            I practiced using CSS to add colors, spacing, and different layouts.
-          </p>
-        </article>
+          <article class="project-card">
+            <h3>Website Styling</h3>
+            <p>
+              I practiced using CSS to add colors, spacing, and different
+              layouts.
+            </p>
+          </article>
 
-        <article class="content-box">
-          <h3>Technology Coursework</h3>
-          <p>
-            I have worked on assignments that helped me learn about computers,
-            databases, and technology careers.
-          </p>
-        </article>
+          <article class="project-card">
+            <h3>Technology Coursework</h3>
+            <p>
+              I have worked on assignments that helped me learn about computers,
+              databases, and technology careers.
+            </p>
+          </article>
+        </div>
       </section>
 
-      <section>
+      <section id="skills">
         <h2>Skills I Am Building</h2>
+
         <ul>
           <li>HTML and CSS</li>
           <li>Website design</li>
