@@ -3,25 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>About Me | I’Lek Powell</title>
+
     <link rel="stylesheet" href="style.css" />
     <script src="form.js" defer></script>
   </head>
+
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
     <header>
       <h1>About Me</h1>
       <p>More about me and how to contact me.</p>
     </header>
 
     <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="projects.html">My Projects</a>
-      <a href="about.html" aria-current="page">About/Contact</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">My Projects</a></li>
+        <li><a href="about.html" aria-current="page">About/Contact</a></li>
+      </ul>
     </nav>
 
-    <main>
-      <section class="content-box">
+    <main id="main">
+      <section class="content-box" id="about">
         <h2>About Me</h2>
+
         <p>
           My name is I’Lek Powell. I am a college student learning about
           technology and building my skills. I want to keep improving and learn
@@ -29,8 +37,9 @@
         </p>
       </section>
 
-      <section class="content-box">
+      <section class="content-box" id="contact">
         <h2>Contact Me</h2>
+
         <p>Fill out the form below to leave a message.</p>
 
         <form id="contact-form" novalidate>
@@ -42,6 +51,7 @@
               type="text"
               id="name"
               name="name"
+              autocomplete="name"
               required
               aria-describedby="name-error"
             />
@@ -52,6 +62,7 @@
               type="email"
               id="email"
               name="email"
+              autocomplete="email"
               required
               aria-describedby="email-error"
             />
