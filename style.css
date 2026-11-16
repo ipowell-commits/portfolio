@@ -110,7 +110,7 @@ section {
   padding: 24px;
   margin-bottom: 24px;
   border-radius: 8px;
-  border: 1px solid #9aabb8;
+  border: 1px solid #667788;
 }
 
 h2,
@@ -145,7 +145,7 @@ p {
   background-color: var(--light-blue);
   color: var(--text);
   padding: 24px;
-  border: 1px solid #8da9bd;
+  border: 1px solid #526579;
   border-radius: 8px;
 }
 
