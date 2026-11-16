@@ -27,12 +27,19 @@ if (form) {
     }
 
     field.input.setAttribute("aria-invalid", String(!valid));
-
     field.error.textContent = valid ? "" : field.message;
 
     return valid;
   }
 
+  // Check each field when someone types or makes a change.
+  fields.forEach((field) => {
+    field.input.addEventListener("input", function () {
+      validateField(field);
+    });
+  });
+
+  // Check all fields when the form is submitted.
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
