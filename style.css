@@ -7,17 +7,43 @@
   padding: 0;
 }
 
+:root {
+  --navy: #142d4e;
+  --blue: #1b4965;
+  --light-blue: #e8f1f8;
+  --background: #f4f7f6;
+  --text: #263746;
+  --white: #ffffff;
+  --error: #9b1c1c;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
-  background-color: #f4f7f6;
-  color: #333333;
+  background-color: var(--background);
+  color: var(--text);
   line-height: 1.6;
+}
+
+/* Skip navigation link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: white;
+  color: var(--navy);
+  padding: 12px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
 }
 
 /* Header */
 header {
-  background-color: #142d4e;
-  color: white;
+  background-color: var(--navy);
+  color: var(--white);
   text-align: center;
   padding: 40px 16px;
 }
@@ -30,7 +56,7 @@ header h1 {
 
 /* Navigation */
 nav {
-  background-color: #1b4965;
+  background-color: var(--blue);
   padding: 16px;
 }
 
@@ -44,13 +70,32 @@ nav ul {
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 4px;
   font-weight: bold;
+  padding: 8px;
+  display: inline-block;
 }
 
 nav a:hover {
-  color: #b7e4c7;
+  color: #ffffff;
+  text-decoration-thickness: 3px;
+}
+
+nav a[aria-current="page"] {
+  background-color: var(--navy);
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Keyboard focus */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid #2675a8;
+  outline-offset: 3px;
 }
 
 /* Main content */
@@ -61,16 +106,17 @@ main {
 }
 
 section {
-  background-color: white;
+  background-color: var(--white);
   padding: 24px;
   margin-bottom: 24px;
   border-radius: 8px;
+  border: 1px solid #9aabb8;
 }
 
 h2,
 h3 {
   font-family: "Poppins", sans-serif;
-  color: #142d4e;
+  color: var(--navy);
   margin-bottom: 16px;
 }
 
@@ -90,26 +136,103 @@ p {
 /* Projects using CSS Grid */
 .project-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   margin-top: 24px;
 }
 
 .project-card {
-  background-color: #e8f5ee;
+  background-color: var(--light-blue);
+  color: var(--text);
   padding: 24px;
+  border: 1px solid #8da9bd;
   border-radius: 8px;
+}
+
+.project-card h3 {
+  color: var(--navy);
 }
 
 /* Goals section */
 #goals {
-  border-left: 5px solid #1b4965;
+  border-left: 5px solid var(--blue);
+}
+
+/* Contact form */
+form {
+  max-width: 700px;
+}
+
+fieldset {
+  border: 2px solid var(--blue);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+legend {
+  color: var(--navy);
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+label {
+  display: block;
+  color: var(--navy);
+  font-weight: bold;
+  margin: 12px 0 6px;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #52718a;
+  border-radius: 5px;
+  background-color: var(--white);
+  color: var(--text);
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+[aria-invalid="true"] {
+  border: 3px solid var(--error);
+}
+
+.error-message {
+  color: var(--error);
+  font-weight: bold;
+  margin: 5px 0 12px;
+}
+
+#form-status {
+  font-weight: bold;
+}
+
+/* Submit button */
+button {
+  background-color: var(--navy);
+  color: var(--white);
+  padding: 12px 24px;
+  border: 2px solid var(--navy);
+  border-radius: 5px;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--blue);
 }
 
 /* Footer */
 footer {
-  background-color: #142d4e;
-  color: white;
+  background-color: var(--navy);
+  color: var(--white);
   text-align: center;
   padding: 24px;
   margin-top: 32px;
@@ -126,7 +249,7 @@ footer p {
   }
 
   .project-container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   main {
