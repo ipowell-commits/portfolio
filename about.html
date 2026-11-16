@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me | I’Lek Powell</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="form.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>About Me</h1>
+      <p>More about me and how to contact me.</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="projects.html">My Projects</a>
+      <a href="about.html" aria-current="page">About/Contact</a>
+    </nav>
+
+    <main>
+      <section class="content-box">
+        <h2>About Me</h2>
+        <p>
+          My name is I’Lek Powell. I am a college student learning about
+          technology and building my skills. I want to keep improving and learn
+          more as I work toward my goals.
+        </p>
+      </section>
+
+      <section class="content-box">
+        <h2>Contact Me</h2>
+        <p>Fill out the form below to leave a message.</p>
+
+        <form id="contact-form" novalidate>
+          <fieldset>
+            <legend>Your Contact Information</legend>
+
+            <label for="name">Name (required)</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              aria-describedby="name-error"
+            />
+            <p id="name-error" class="error-message"></p>
+
+            <label for="email">Email Address (required)</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              aria-describedby="email-error"
+            />
+            <p id="email-error" class="error-message"></p>
+          </fieldset>
+
+          <label for="message">Your Message (required)</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            aria-describedby="message-error"
+          ></textarea>
+          <p id="message-error" class="error-message"></p>
+
+          <p id="form-status" role="status" aria-live="polite"></p>
+
+          <button type="submit">Submit Message</button>
+        </form>
+
+        <p>
+          This is a demonstration form. It checks your information but does not
+          send messages.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 I’Lek Powell</p>
+    </footer>
+  </body>
+</html>
